@@ -1,12 +1,10 @@
-const db = require('./connection')
-function allDepts() {
-    db.query('SELECT * FROM department', function (err, results) {
+const db = require('./db/connection')
+function allLocales() {
+    db.query('SELECT * FROM locale', function (err, results) {
         console.log(results);
-        // startApp();
     });
 }
 
 module.exports = {
-    allDepts
-    // allDepts : allDepts
+    allLocales
 }

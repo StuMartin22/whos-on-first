@@ -1,5 +1,5 @@
-INSERT INTO department(dept_name) VALUES ('Sales');
+INSERT INTO locale(locale_name) VALUES ('Sales');
 
 
-INSERT INTO emp_role(title, salary, dept_id)
+INSERT INTO personnel_role(title, salary, locale_id)
  VALUES ('Sales Associate', '50000', 1);

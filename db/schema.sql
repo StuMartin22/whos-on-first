@@ -20,5 +20,7 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 first_name VARCHAR(30),
 last_name: VARCHAR(30),
 role_id INT not NULL,
-manager_id:INT to hold reference to another employee that is the manager of the current employee (null if the employee has no manager)
-)
+FOREIGN KEY (role_id) REFERENCES personnel_role(id)
+manager_id:INT NULL,
+FOREIGN KEY (manager_id) REFERENCES employee_info(id)
+);

@@ -24,8 +24,8 @@ function startApp() {
                     // console.log(allLocales)
                     break;
                 case opt [1]:
-                    const roles = allRoles(ans);
-                    // console.log(roles)
+                    const roles = allRoles();
+                    console.log(roles)
                     // .catch((err) => console.error(err));
                     default:
                     break;

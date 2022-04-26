@@ -5,10 +5,11 @@ function allDepartments() {
     });
 }
 function allRoles () {
-    db.query('SELECT * FROM personnel_role', function (err, results) {
+    db.query('SELECT * FROM personnel_role')
+    // , function (err, results) {
         // console.log(results)
-    })
-}
+    };
+// }
 
 module.exports = {
     allDepartments,

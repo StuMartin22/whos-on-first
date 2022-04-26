@@ -1,5 +1,5 @@
-const inquirer = require('inquirer');
 require('dotenv').config();
+const inquirer = require('inquirer');
 const {allDepartments, allRoles} = require('./queryFunctions')
 
 const opt = ["ALL_DEPT", "ALL_ROLES"];
@@ -24,8 +24,8 @@ function startApp() {
                     // console.log(allLocales)
                     break;
                 case opt [1]:
-                    const roles = allRoles;
-                    console.log(roles)
+                    const roles = allRoles(ans);
+                    // console.log(roles)
                     // .catch((err) => console.error(err));
                     default:
                     break;
@@ -34,6 +34,3 @@ function startApp() {
 }
 
 startApp();
-
-
-

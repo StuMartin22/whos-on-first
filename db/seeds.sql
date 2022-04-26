@@ -1,4 +1,4 @@
-INSERT INTO locale(locale_name) VALUES ('Sales');
+INSERT INTO department(department_name) VALUES ('Sales');
 
 
 INSERT INTO personnel_role(title, salary, locale_id)

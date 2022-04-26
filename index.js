@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 require('dotenv').config();
-const {allLocales} = require('./queryFunctions')
+const {allDepartments, allRoles} = require('./queryFunctions')
 
 const opt = ["ALL_DEPT", "ALL_ROLES"];
 
@@ -9,7 +9,7 @@ function startApp() {
         {
             type: "list",
             name: "userView",
-            message: "What would you like to see?",
+            message: "Which of the following would you like to see?",
             choices: opt
         }
     ])
@@ -17,11 +17,18 @@ function startApp() {
             console.log(ans);
             switch (ans.userView) {
                 case opt[0]:
-                    allLocales();
+                    // console.log(ans.userView);
+                    // console.log(opt[0])
+                    // const departments = allDepartments();
+                    // console.log(locales);
+                    // console.log(allLocales)
                     break;
-
-                // default:
-                //     break;
+                case opt [1]:
+                    const roles = allRoles;
+                    console.log(roles)
+                    // .catch((err) => console.error(err));
+                    default:
+                    break;
             }
         })
 }

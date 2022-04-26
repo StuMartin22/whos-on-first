@@ -1,7 +1,7 @@
 const db = require('./db/connection')
 function allDepartments() {
-    db.query('SELECT * FROM department', function (err, results) {
-        // console.log(results);
+    db.query('SELECT * FROM department', function (err, data) {
+        console.table(data);
     });
 }
 function allRoles () {
@@ -11,7 +11,4 @@ function allRoles () {
     };
 // }
 
-module.exports = {
-    allDepartments,
-    allRoles
-}
+module.exports = allDepartments, allRoles

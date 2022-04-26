@@ -1,6 +1,11 @@
 require('dotenv').config();
 const inquirer = require('inquirer');
-const {allDepartments, allRoles} = require('./queryFunctions')
+const allDepartments = require('./queryFunctions')
+const allRoles = require('./queryFunctions')
+const db = require('./db/connection');
+db.connect(function(err){
+    if (err) throw err
+})
 
 const opt = ["ALL_DEPT", "ALL_ROLES"];
 
@@ -14,14 +19,17 @@ function startApp() {
         }
     ])
         .then((ans) => {
-            console.log(ans);
+            // console.log(ans);
             switch (ans.userView) {
                 case opt[0]:
-                    // console.log(ans.userView);
+                    allDepartments();
+                     //  console.table(allDepartments())
+                    // console.table(allDepartments)
                     // console.log(opt[0])
                     // const departments = allDepartments();
                     // console.log(locales);
                     // console.log(allLocales)
+                    // startApp();
                     break;
                 case opt [1]:
                     const roles = allRoles();

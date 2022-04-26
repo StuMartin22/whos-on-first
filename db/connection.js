@@ -3,9 +3,9 @@ const db = mysql.createConnection(
     {
         host: 'localhost',
         // MySQL username,
-        user: process.env.USER,
-        password: process.env.MYSQL_PASSWORD,
-        database: process.env.MYSQL_DB_NAME
+        user: 'root',
+        password: process.env.PASSWORD,
+        database: process.env.DBNAME
     },
     console.log(`Connected to the database.`)
 );

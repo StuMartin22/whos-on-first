@@ -8,20 +8,20 @@ function startApp() {
     inquirer.prompt([
         {
             type: "list",
-            name: "userview",
-            message: "What you want to see?",
+            name: "userView",
+            message: "What would you like to see?",
             choices: opt
         }
     ])
         .then((ans) => {
             console.log(ans);
-            switch (ans.userview) {
+            switch (ans.userView) {
                 case opt[0]:
                     allLocales();
                     break;
 
-                default:
-                    break;
+                // default:
+                //     break;
             }
         })
 }

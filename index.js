@@ -2,7 +2,7 @@ require('dotenv').config();
 const inquirer = require('inquirer');
 // const allDepartments = require('./queryFunctions')
 // const allRoles = require('./queryFunctions')
-const allEmployees = require('./queryFunctions')
+const tableFunctions = require('./queryFunctions')
 // const db = require('./db/connection');
 // db.connect(function(err){
 //     if (err) throw err
@@ -23,20 +23,13 @@ function startApp() {
             // console.log(ans);
             switch (ans.userView) {
                 case opt[0]:
-                    allEmployees();
-                    // allDepartments;
-                     //  console.table(allDepartments())
-                    // console.table(allDepartments)
-                    // console.log(opt[0])
-                    // const departments = allDepartments();
-                    // console.log(locales);
-                    // console.log(allLocales)
-                    // startApp();
+                    tableFunctions.allDepartments();
+                    startApp();
                     break;
                 case opt [1]:
-                    // allRoles();
-                    // console.log(roles)
-                    // .catch((err) => console.error(err));
+                    tableFunctions.allEmployees();
+                    startApp();
+                case opt [2]:
                     default:
                     break;
             }

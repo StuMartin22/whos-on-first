@@ -1,11 +1,12 @@
 require('dotenv').config();
 const inquirer = require('inquirer');
-const allDepartments = require('./queryFunctions')
-const allRoles = require('./queryFunctions')
-const db = require('./db/connection');
-db.connect(function(err){
-    if (err) throw err
-})
+// const allDepartments = require('./queryFunctions')
+// const allRoles = require('./queryFunctions')
+const allEmployees = require('./queryFunctions')
+// const db = require('./db/connection');
+// db.connect(function(err){
+//     if (err) throw err
+// })
 
 const opt = ["ALL_DEPT", "ALL_ROLES"];
 
@@ -22,7 +23,8 @@ function startApp() {
             // console.log(ans);
             switch (ans.userView) {
                 case opt[0]:
-                    allDepartments();
+                    allEmployees();
+                    // allDepartments;
                      //  console.table(allDepartments())
                     // console.table(allDepartments)
                     // console.log(opt[0])
@@ -32,8 +34,8 @@ function startApp() {
                     // startApp();
                     break;
                 case opt [1]:
-                    const roles = allRoles();
-                    console.log(roles)
+                    // allRoles();
+                    // console.log(roles)
                     // .catch((err) => console.error(err));
                     default:
                     break;

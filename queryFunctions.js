@@ -4,8 +4,12 @@ db.connect(function(err){
 })
 
 //view All Employees
+//select everything you want
+//join after 
+//ctrl z to see all in screen
 function allEmployees () {
-    db.query('SELECT * FROM personnel_role', function (err, results) {
+    db.query('SELECT employee_info.id,employee_info.first_name,employee_info.last_name, personnel_role.title, personnel_role.salary,CONCAT(manager.first_name , " " , manager.last_name) AS manager FROM employee_info LEFT JOIN personnel_role on employee_info.role_id = personnel_role.id LEFT JOIN employee_info manager on manager.id = employee_info.manager_id', function (err, results) {
+        console.log('\n')
         console.table(results);
     })
 };
@@ -18,19 +22,34 @@ function allEmployees () {
 // };
 
 //get all employee by manager
-// function allRoles () {
+// function employeeByMgr () {
 //     db.query('SELECT * FROM personnel_role', function (err, results) {
 //         console.table(results);
 //     })
 // };
 
 //add employee
-//add department
-//add role
-//remove employee
-//remove role
-//update employee role
-//update employee manager
-//exit
+//function addEmployee (){};
 
-module.exports = {allEmployees, }
+//add department
+//function addDpt (){};
+
+//add role
+//function addRole (){};
+
+//remove employee
+//function removeEmployee (){};
+
+//remove role
+//function removeRole (){};
+
+//update employee role
+//function updateEmpRole (){};
+
+//update employee manager
+//function updateEmpMgr (){};
+
+//exit
+//function getOut (){};
+
+module.exports = {allEmployees}

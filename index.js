@@ -1,14 +1,15 @@
 require('dotenv').config();
 const inquirer = require('inquirer');
+require('console.table')
 // const allDepartments = require('./queryFunctions')
 // const allRoles = require('./queryFunctions')
-const tableFunctions = require('./queryFunctions')
+const tableFunctions = require('./queryFunctions');
 // const db = require('./db/connection');
 // db.connect(function(err){
 //     if (err) throw err
 // })
 
-const opt = ["VIEW all employees","VIEW employees by department","VIEW employees by manager","ADD employee","ADD department","ADD role", "REMOVE employee","REMOVE role","UPDATE employee role","UPDATE employee manager","EXIT"];
+const opt = ["View all departments", "View all roles","View all employees"];
 
 function startApp() {
     inquirer.prompt([
@@ -23,39 +24,16 @@ function startApp() {
             // console.log(ans);
             switch (ans.userView) {
                 case opt[0]:
-                    tableFunctions.allDepartments();
+                    // tableFunctions.allDepartments();
                     startApp();
                     break;
                 case opt [1]:
-                    tableFunctions.allEmployees();
+                    // tableFunctions.allRoles();
                     startApp();
                     break;
                 case opt [2]:
-                    startApp();    
-                    break;
-                case opt [3]:
-                    startApp();    
-                    break;
-                case opt [4]:
-                    startApp();    
-                    break;
-                case opt [5]:
-                    startApp();    
-                    break;
-                case opt [6]:
-                    startApp();    
-                    break;
-                case opt [7]:
-                    startApp();    
-                    break;
-                case opt [8]:
-                    startApp();    
-                    break;
-                case opt [9]:
-                    startApp();    
-                    break;
-                case opt [10]:
-                    default:
+                    tableFunctions.allEmployees();
+                    startApp();
                     break;
             }
         })

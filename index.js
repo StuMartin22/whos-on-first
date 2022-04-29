@@ -28,7 +28,7 @@ function startApp() {
                     startApp();
                     break;
                 case opt [1]:
-                    // tableFunctions.allRoles();
+                    tableFunctions.allRoles();
                     startApp();
                     break;
                 case opt [2]:

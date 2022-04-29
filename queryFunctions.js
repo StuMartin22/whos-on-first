@@ -22,6 +22,16 @@ function allDept () {
     })
 };
 
+//View all roles
+
+function allRoles () {
+    db.query('SELECT * FROM personnel_role LEFT JOIN department on personnel_role.department_id = department.id', function (err, results) {
+        console.log('\n')
+        console.table(results);
+    })
+};
+
+
 //get all employee by department
 // function employeeByDept () {
 //     db.query('SELECT * FROM department', function (err, results) {
@@ -60,4 +70,4 @@ function allDept () {
 //exit
 //function getOut (){};
 
-module.exports = {allEmployees,allDept}
+module.exports = {allEmployees,allDept,allRoles}

@@ -24,7 +24,7 @@ function startApp() {
             // console.log(ans);
             switch (ans.userView) {
                 case opt[0]:
-                    // tableFunctions.allDepartments();
+                    tableFunctions.allDept();
                     startApp();
                     break;
                 case opt [1]:

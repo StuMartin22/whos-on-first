@@ -14,6 +14,14 @@ function allEmployees () {
     })
 };
 
+//view all departments
+function allDept () {
+    db.query('SELECT * FROM department', function (err, results) {
+        console.log('\n')
+        console.table(results);
+    })
+};
+
 //get all employee by department
 // function employeeByDept () {
 //     db.query('SELECT * FROM department', function (err, results) {
@@ -52,4 +60,4 @@ function allEmployees () {
 //exit
 //function getOut (){};
 
-module.exports = {allEmployees}
+module.exports = {allEmployees,allDept}

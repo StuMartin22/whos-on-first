@@ -1,15 +1,9 @@
 require('dotenv').config();
 const inquirer = require('inquirer');
 require('console.table')
-// const allDepartments = require('./queryFunctions')
-// const allRoles = require('./queryFunctions')
 const tableFunctions = require('./queryFunctions');
-// const db = require('./db/connection');
-// db.connect(function(err){
-//     if (err) throw err
-// })
 
-const opt = ["View all departments", "View all roles","View all employees"];
+const opt = ["View all departments", "View all roles","View all employees","Add department"];
 
 function startApp() {
     inquirer.prompt([
@@ -35,8 +29,15 @@ function startApp() {
                     tableFunctions.allEmployees();
                     startApp();
                     break;
+                case opt [3]:
+                    tableFunctions.addDept();
+                    // tableFunctions.addDeptPrompt();
+                    // startApp();
+                    break;
             }
         })
 }
 
 startApp();
+
+module.exports = { startApp }

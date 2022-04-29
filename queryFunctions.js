@@ -1,4 +1,6 @@
 const db = require('./db/connection')
+const inquirer = require('inquirer');
+const functions = require('./index')
 db.connect(function(err){
     if (err) throw err
 })
@@ -31,6 +33,24 @@ function allRoles () {
     })
 };
 
+function addDept() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "deptName",
+            message: "What would you like the department to be called?",
+        }
+    ])
+    .then((ans) => {
+        return console.log(ans.deptName + ' added!')
+        // functions.startApp();
+})
+    // functions.startApp();
+};
+
+
+
+// addDeptPrompt
 
 //get all employee by department
 // function employeeByDept () {
@@ -48,9 +68,6 @@ function allRoles () {
 
 //add employee
 //function addEmployee (){};
-
-//add department
-//function addDpt (){};
 
 //add role
 //function addRole (){};
@@ -70,4 +87,4 @@ function allRoles () {
 //exit
 //function getOut (){};
 
-module.exports = {allEmployees,allDept,allRoles}
+module.exports = {allEmployees,allDept,allRoles,addDept}

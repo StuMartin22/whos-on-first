@@ -7,7 +7,7 @@ db.connect(function(err){
 
 //view All Employees
 //select everything you want
-//join after 
+//join after
 //ctrl z to see all in screen
 function allEmployees () {
     db.query('SELECT employee_info.id,employee_info.first_name,employee_info.last_name, personnel_role.title, personnel_role.salary,CONCAT(manager.first_name , " " , manager.last_name) AS manager FROM employee_info LEFT JOIN personnel_role on employee_info.role_id = personnel_role.id LEFT JOIN employee_info manager on manager.id = employee_info.manager_id', function (err, results) {

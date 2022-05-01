@@ -32,19 +32,20 @@ function allRoles () {
         console.table(results);
     })
 };
+
 //this one broke.
-// function addDept() {
-//     inquirer.prompt([
-//         {
-//             type: "input",
-//             name: "deptName",
-//             message: "What would you like the department to be called?",
-//         }
-//     ])
-//     .then((ans) => {
-//         return ans;
-// }) .then (() => startApp());
-// };
+function addDept() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "deptName",
+            message: "What would you like the department to be called?",
+        }
+    ])
+    .then((ans) => {
+        return ans;
+}) .then (() => startApp());
+};
 
 //todo create functions
 

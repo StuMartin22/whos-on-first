@@ -15,7 +15,6 @@ function startApp() {
         }
     ])
         .then((ans) => {
-            // console.log(ans);
             switch (ans.userView) {
                 case opt[0]:
                     tableFunctions.allDept();
@@ -40,4 +39,4 @@ function startApp() {
 
 startApp();
 
-module.exports = { startApp }
+module.exports = startApp

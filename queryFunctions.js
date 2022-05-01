@@ -1,6 +1,6 @@
 const db = require('./db/connection')
 const inquirer = require('inquirer');
-const functions = require('./index')
+const startApp = require('./index')
 db.connect(function(err){
     if (err) throw err
 })
@@ -32,39 +32,27 @@ function allRoles () {
         console.table(results);
     })
 };
+//this one broke.
+// function addDept() {
+//     inquirer.prompt([
+//         {
+//             type: "input",
+//             name: "deptName",
+//             message: "What would you like the department to be called?",
+//         }
+//     ])
+//     .then((ans) => {
+//         return ans;
+// }) .then (() => startApp());
+// };
 
-function addDept() {
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "deptName",
-            message: "What would you like the department to be called?",
-        }
-    ])
-    .then((ans) => {
-        return console.log(ans.deptName + ' added!')
-        // functions.startApp();
-})
-    // functions.startApp();
-};
-
-
-
-// addDeptPrompt
+//todo create functions
 
 //get all employee by department
-// function employeeByDept () {
-//     db.query('SELECT * FROM department', function (err, results) {
-//         console.table(results);
-//     })
-// };
+// function employeeByDept () {};
 
 //get all employee by manager
-// function employeeByMgr () {
-//     db.query('SELECT * FROM personnel_role', function (err, results) {
-//         console.table(results);
-//     })
-// };
+// function employeeByMgr () {};
 
 //add employee
 //function addEmployee (){};

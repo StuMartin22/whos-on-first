@@ -29,7 +29,7 @@ function startApp() {
                     startApp();
                     break;
                 case opt [3]:
-                    tableFunctions.addDept();
+                    addDept();
                     // tableFunctions.addDeptPrompt();
                     // startApp();
                     break;
@@ -37,6 +37,19 @@ function startApp() {
         })
 }
 
-startApp();
 
-module.exports = startApp
+function addDept() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "deptName",
+            message: "What would you like the department to be called?",
+        }
+    ])
+    .then((ans) => {
+        console.log(ans);
+}) .then (() => startApp());
+};
+
+
+startApp();

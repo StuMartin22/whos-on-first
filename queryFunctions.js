@@ -1,6 +1,5 @@
 const db = require('./db/connection')
 const inquirer = require('inquirer');
-const startApp = require('./index')
 db.connect(function(err){
     if (err) throw err
 })
@@ -34,18 +33,7 @@ function allRoles () {
 };
 
 //this one broke.
-function addDept() {
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "deptName",
-            message: "What would you like the department to be called?",
-        }
-    ])
-    .then((ans) => {
-        return ans;
-}) .then (() => startApp());
-};
+
 
 //todo create functions
 
@@ -76,4 +64,4 @@ function addDept() {
 //exit
 //function getOut (){};
 
-module.exports = {allEmployees,allDept,allRoles,addDept}
+module.exports = {allEmployees,allRoles,allDept}
